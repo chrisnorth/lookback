@@ -6,14 +6,51 @@ function parseResults(jData){
     var simbadUrl=jData.service.href;
     var simbadUrl = simbadUrl + "&mescat.distance=on&mescat.z=on&submit=display+selected+measurements"
     console.log(simbadUrl);
+
+    //AJAX method
     //$.ajax({ url: simbadUrl});
     //console.log(simbadData);
 
-    $('body').append("<div id='simbad-results'></div>");
-    $('#simbad-results').load(simbadUrl,function(){alert('load done');});
+    //LOAD method
+    $('#simbad').css('display','block');
+    $('#simbad #full-results').load(simbadUrl,function(){
+	//NOTE: #full-results has display:none in CSS
+
+	//hide 'loading' div
+	$('#simbad #loading').css('display','none');
+    });
+
+    //get distances from simbad results
+    var preElements = document.getElementsByTagName('pre')
+    for(var i = 0; i < preElements.length; ++ i)
+    {
+	var element = preElements[i];
+	$('#simbad #table').append(element);
+	//console.log(element.innerHTML);
+	distStr=element.innerHTML;
+	distSplit=distStr.split('|');
+	console.log(distSplit);
+	if (distSplit[1].search("redshift")>=0){
+	    //get 4th element
+	    redshift = distSplit[4];
+	    console.log('redshift =',redshift);
+	    document.getElementById('redshiftvalue').innerHTML = redshift;
+	    document.getElementById('redshift').show()
+	}else{
+	    //get 6th element
+	    distance = distSplit[6];
+	    console.log('distance =',distance);
+	    document.getElementById('distancevalue').innerHTML = distance;
+	    document.getElementById('distance').css('display','block')
+	};
+	
+    }
+    
+    
 };
 
 
+//AJAX success (depracated)
 $(document).ajaxSuccess(function(event,xhr,settings){
     $('body').append("<div id='simbad-results'></div>");
     $('#simbad-results').append(xhr);

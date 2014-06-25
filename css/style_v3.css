@@ -307,3 +307,27 @@ td.button {
 	background: #cfcff3;
 	text-align: center;
 }
+
+#simbad{
+    display:none
+}
+
+#simbad #loading{
+    text-align:center;
+}
+
+#simbad #full-results{
+    height:100px;
+    display:none;
+}
+
+#simbad #table{
+    display:none;
+}
+
+#simbad #distance{
+    /*display:none;*/
+}
+#simbad #redshift{
+    /*display:none;*/
+}
