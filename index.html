@@ -1,16 +1,37 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-        <meta charset="utf-8" />
-        <title>CMB Simulator</title>
-        <link rel="stylesheet" href="lookback.css" />
-        <script src="js/jquery-1.10.0.min.js"></script>
-        
-<script src="js/lookback.js"></script>
+<title>
+Test lookup
+</title>
 
-
+<script language="javascript" src ="js/jquery-1.11.0.js"></script>
+<link rel="stylesheet" href="css/style_v3.css" type="text/css"> 
 </head>
 <body>
-Hello world
+
+<form id="form" name="ost" method="post" action="#" enctype="multipart/form-data">
+
+<div class="form_sec">
+   <div class="form_input">
+      <input type="text" name="object" id="object" value="0.0"> 
+   </div>
+   <div class="form_info">
+          Enter an astronomical object.
+   </div><div class="clear"></div>
+</div>
+
+<div class="form_sec">
+   <div class="form_input"></div>
+
+   <div class="form_info" style="background: #aaccff;">
+	     <input TYPE="submit" VALUE="Submit" align="center">
+   </div><div class="clear"></div>
+</div>
+</form>
+
+<p><tt id="results"></tt></p>
+<!--- ####### END OF FORM ######## --->
+<script language="javascript" src ="js/writeInps.js"></script>
+
 </body>
 </html>
