@@ -5,11 +5,17 @@ Test lookup
 </title>
 
 <script language="javascript" src ="js/jquery-1.11.0.js"></script>
-<link rel="stylesheet" href="css/style_v3.css" type="text/css"> 
-</head>
-<body>
+<script language="javascript" src ="js/writeInps.js"></script>
+<!--<script type="text/javascript" src="http://www.strudel.org.uk/lookUP/widget.js"></script>-->
 
-<form id="form" name="ost" method="post" action="#" enctype="multipart/form-data">
+<link rel="stylesheet" href="css/style_v3.css" type="text/css"> 
+<link rel="stylesheet" href="css/lookback.css" type="text/css"> 
+</head>
+<body onload="dosearch">
+
+<!--<div id="lookUP">LookUP Form</div>-->
+
+<form id="form" name="ost" method="get" action="http://strudel.org.uk/lookUP/" enctype="multipart/form-data">
 
 <div class="form_sec">
    <div class="form_input">
@@ -31,7 +37,5 @@ Test lookup
 
 <p><tt id="results"></tt></p>
 <!--- ####### END OF FORM ######## --->
-<script language="javascript" src ="js/writeInps.js"></script>
-
 </body>
 </html>

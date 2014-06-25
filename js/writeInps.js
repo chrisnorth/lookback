@@ -3,6 +3,10 @@ function writeInputs(){
     $( "#results" ).text( str ); 
 }//end of writeInputs function
 
+function dosearch(){
+    console.log('hello');
+}
+
 $(function(){
 
     writeInputs();
