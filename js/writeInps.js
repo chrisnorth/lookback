@@ -2,6 +2,25 @@
     
 function parseResults(jData){
     console.log(jData);
+    console.log(jData.service.href);
+
+}
+
+function getResults(){
+    var url = 'http://strudel.org.uk/lookUP/json/?callback=lk&name=';
+    var callback= 'parseResults';
+    var form = document.forms[0];
+    console.log(form);
+    var object = form['name'].value
+    // Encode and escape single quotes
+    var obj = encodeURIComponent(object).replace(/\'/,"\\\'");
+    if(object){
+	var headID = document.getElementsByTagName("head")[0];
+	var newScript = document.createElement('script');
+	newScript.type = 'text/javascript';
+	newScript.src = url+''+obj+'&callback='+callback;
+	headID.appendChild(newScript);
+    }
 }
 
 $(document).ready(function(){
@@ -11,22 +30,9 @@ $(document).ready(function(){
 	$('body').append(obj);
     })
     
-    function getResults(url,callback){
-	var form = document.forms[0];
-	var object = form['name'].value
-	// Encode and escape single quotes
-	var obj = encodeURIComponent(object).replace(/\'/,"\\\'");
-	if(object){
-	    var headID = document.getElementsByTagName("head")[0];
-	    var newScript = document.createElement('script');
-	    newScript.type = 'text/javascript';
-	    newScript.src = url+''+obj+'&callback='+callback;
-	    headID.appendChild(newScript);
-	}
-    }
 
-    console.log('searching');
-    getResults('http://strudel.org.uk/lookUP/json/?callback=lk&name=','parseResults');
+    //console.log('searching');
+    //getResults();
     
 });
 
