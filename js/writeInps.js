@@ -2,9 +2,6 @@
 $(document).ready(function(){
     $("#object").change(function(){
 	var obj= $("#object").val();
-	var simbadLink=
-	$('body').append(simbadLink);
-
+	//var simbadLink=
+	$('body').append(obj);
     });
-
-});
