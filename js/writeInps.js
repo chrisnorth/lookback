@@ -22,9 +22,11 @@ function parseResults(jData){
 
     //get distances from simbad results
     var preElements = document.getElementsByTagName('pre')
+    console.log ('found ',preElements.length,'pre tags');
     for(var i = 0; i < preElements.length; ++ i)
     {
 	var element = preElements[i];
+	console.log(i,element);
 	$('#simbad #table').append(element);
 	//console.log(element.innerHTML);
 	distStr=element.innerHTML;
@@ -35,13 +37,13 @@ function parseResults(jData){
 	    redshift = distSplit[4];
 	    console.log('redshift =',redshift);
 	    document.getElementById('redshiftvalue').innerHTML = redshift;
-	    document.getElementById('redshift').show()
+	    $('#redshift').show()
 	}else{
 	    //get 6th element
 	    distance = distSplit[6];
 	    console.log('distance =',distance);
 	    document.getElementById('distancevalue').innerHTML = distance;
-	    document.getElementById('distance').css('display','block')
+	    $('#distance').css('display','block')
 	};
 	
     }

@@ -309,7 +309,8 @@ td.button {
 }
 
 #simbad{
-    display:none
+    display:none;
+    color:black
 }
 
 #simbad #loading{
@@ -326,8 +327,8 @@ td.button {
 }
 
 #simbad #distance{
-    /*display:none;*/
+    display:none;
 }
 #simbad #redshift{
-    /*display:none;*/
+    display:none;
 }
