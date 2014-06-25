@@ -1,15 +1,12 @@
-function writeInputs(){
-   var str = $( "form" ).serialize();
-    $( "#results" ).text( str ); 
-}//end of writeInputs function
 
-$(function(){
+// Jquery based stuff
+$(document).ready(function(){
 
-    writeInputs();
+    $("#object").change(function(){
+	var obj= $("#object").val();
+	var simbadLink=
+	$('body').append(simbadLink);
 
-    $("input[type='checkbox'],input[type='radio']").on("click",writeInputs);
-    $( "select,input[type='text'],input[type='file']" ).on( "change", writeInputs );
+    });
 
-
-   
 });
