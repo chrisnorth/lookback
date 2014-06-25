@@ -116,8 +116,8 @@ function earthTime(timeYr){
 
 function lookBackTime(){
     // psuedo inputs... these will eventually be inputs to this function
-    var dist=3.0;
-    var distUnit="z";
+    var dist=1.0;
+    var distUnit="kpc";
     
     // convert to common unit for lookup time
     distPC=toParsec(dist,distUnit);
@@ -126,7 +126,7 @@ function lookBackTime(){
 
     // Earth Year
     lookBack=earthTime(timeYears);
-    var lookBackTime=lookBack[0];
+    var lookBackTime=Math.ceil(lookBack[0]);
     var lookBackUnit=lookBack[1];
 
     //$('body').append(lookBackTime+"   "+lookBackUnit);

@@ -9,11 +9,13 @@ function wikiInterface(){
 
     if (earthEpoch=="AD")
     {
-	linkWiki="htpp://en.wikipedia.org/wiki/"+earthYear;
+	linkWiki="http://en.wikipedia.org/wiki/"+earthYear;
     }
     else
     {
-	linkWiki="htpp://en.wikipedia.org/wiki/"+earthYear+"_BC";
+	linkWiki="http://en.wikipedia.org/wiki/"+earthYear+"_BC";
     }
+
+    $('body').append(linkWiki);
 
 }
