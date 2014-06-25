@@ -11,15 +11,16 @@ Test lookup
 <link rel="stylesheet" href="css/style_v3.css" type="text/css"> 
 <link rel="stylesheet" href="css/lookback.css" type="text/css"> 
 </head>
-<body onload="dosearch">
+<body>
 
 <!--<div id="lookUP">LookUPForm</div>-->
 
-<form id="form" name="ost" method="get" action="http://strudel.org.uk/lookUP/">
+<form id="form" name="ost" method="get" action="#">
 
 <div class="form_sec">
    <div class="form_input">
       <input type="text" name="name" id="object" value="0.0"> 
+      <input type="hidden" name="callback" value="lk">
    </div>
    <div class="form_info">
           Enter an astronomical object.
