@@ -3,8 +3,23 @@
 function parseResults(jData){
     console.log(jData);
     console.log(jData.service.href);
+    var simbadUrl=jData.service.href;
+    var simbadUrl = simbadUrl + "&mescat.distance=on&mescat.z=on&submit=display+selected+measurements"
+    console.log(simbadUrl);
+    //$.ajax({ url: simbadUrl});
+    //console.log(simbadData);
 
-}
+    $('body').append("<div id='simbad-results'></div>");
+    $('#simbad-results').load(simbadUrl,function(){alert('load done');});
+};
+
+
+$(document).ajaxSuccess(function(event,xhr,settings){
+    $('body').append("<div id='simbad-results'></div>");
+    $('#simbad-results').append(xhr);
+    dataX=$.parseHTML(xhr.responseText);
+    console.log(dataX);
+});
 
 function getResults(){
     var url = 'http://strudel.org.uk/lookUP/json/?callback=lk&name=';
@@ -23,6 +38,13 @@ function getResults(){
     }
 }
 
+/*$(document).ajaxSuccess(function(event,xhr,settings){
+    console.log('ajax success');
+    console.log(xhr);
+    //console.log('response:',xhr.responseText);
+    //$('#body').append("<div id='simbad-results></div>");
+    //$('#simbad-results').append(xhr.responseText);
+})*/
 
 $(document).ready(function(){
     $("#object").change(function(){
